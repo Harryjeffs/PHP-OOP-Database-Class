@@ -43,7 +43,7 @@ class query_builder extends db_connection
             return false;
         }else {
             foreach ($data as $field => $content) {
-                $colm[] .= $field;
+                $colm[] .= $this->escapeString($field);
                 $values[] .= "?"; // ? placeholder is for the data we want to escape.
                 switch (true) {
                     case  is_bool($content):
